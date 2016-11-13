@@ -1,0 +1,17 @@
+{
+  "name": "todo_simple_app",
+  "description": "A small todo project",
+  "main": "",
+  "authors": [
+    "ndqvinh"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
