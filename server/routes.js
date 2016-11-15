@@ -48,6 +48,6 @@ module.exports = function(app) {
     });
 
     app.get('*', function(req, res) {
-        res.sendFile('./app/index.html');
+        res.sendFile(root + '/app/index.html');
     });
 };
