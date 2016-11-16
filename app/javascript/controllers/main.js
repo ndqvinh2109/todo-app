@@ -1,5 +1,5 @@
-angular.module('todoApp', [])
-    .controller('todoController', ['$scope', 'Todo', function($scope, Todo) {
+angular.module('todoController', [])
+    .controller('mainController', ['$scope', 'Todo', function($scope, Todo) {
         $scope.formData = {};
 
         Todo.get()
@@ -29,7 +29,7 @@ angular.module('todoApp', [])
                 .error(function(data) {
                     console.log('Error ' + data);
                 })
-        }
+        };
 
 
     }]);
