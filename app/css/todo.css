@@ -20,21 +20,6 @@ body {
 }
 
 
-/*
- * Top navigation
- * Hide default border to remove 1px line.
- */
-
-.navbar-fixed-top {
-    border: 0;
-}
-
-
-/*
- * Sidebar
- */
-
-
 /* Hide for mobile, show later */
 
 .sidebar {
@@ -101,4 +86,22 @@ body {
 
 .list-todo {
     margin-top: 20px;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.delete-todo-icon {
+    float: right;
+    cursor: pointer;
+    font-size: 20px
+}
+
+.todo-text {
+    font-size: 21px;
+}
+
+.form-check-input {
+    height: 33px;
 }

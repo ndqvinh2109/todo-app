@@ -47,6 +47,24 @@ module.exports = function(app) {
         });
     });
 
+    app.put('/api/todos/', function(req, res) {
+       
+        Todo.findByIdAndUpdate(req.body._id, { $set: req.body }, function(err, todo) {
+            
+            if (err) {
+                res.send(err);
+            }
+
+            Todo.find(function(err, todos) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(todos);
+            });
+
+        });
+    });
+
     app.get('*', function(req, res) {
         res.sendFile(root + '/app/index.html');
     });

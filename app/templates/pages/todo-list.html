@@ -1,0 +1,5 @@
+<li class="list-group-item" ng-repeat="todo in todos">
+    <ul class="list-group list-group-flush">
+        <todo-item todo="todo" delete-todo="deleteTodo(todo._id)" update-todo="updateTodo(todo)"></todo-item>
+    </ul>
+</li>

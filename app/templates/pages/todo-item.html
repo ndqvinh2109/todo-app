@@ -1,0 +1,8 @@
+<label class="form-check-label">
+    <input type="checkbox" class="form-check-input" ng-model="todo.done" ng-change="updateTodo( {todo: todo} )">
+    <span class="todo-text"> {{todo.text}}</span>
+</label>
+<a class="delete-todo-icon" ng-click="deleteTodo({id: todo._id})">
+    <i class="fa fa-trash" aria-hidden="true"></i>
+</a>
+
