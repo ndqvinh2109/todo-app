@@ -16,7 +16,8 @@
             <div ng-include=" 'templates/block/nav.html' " class="col-sm-3 col-md-2"></div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <div class="jumbotron text-center">
-                    <h1>You have <span class="label label-info">{{todos.length}}</span> things to do</h1>
+                    <h1 ng-if="todos.length>0">You have <span class="label label-info">{{todos.length}}</span> things to do</h1>
+                    <h1 ng-if="todos.length==0">No more todos! You're all caught up</h1>
                 </div>
                 <div class="row">
                     <form>
