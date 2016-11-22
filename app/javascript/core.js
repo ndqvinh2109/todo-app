@@ -1,1 +1,1 @@
-angular.module('todoApp', ['todoController', 'todoService', 'todoDirective'])
+angular.module('todoApp', ['todoController', 'todoService', 'todoDirective', 'ngMessages'])

@@ -20,6 +20,7 @@
     "bootstrap": "v4.0.0-alpha.5"
   },
   "dependencies": {
-    "components-font-awesome": "^4.7.0"
+    "components-font-awesome": "^4.7.0",
+    "angular-messages": "^1.5.8"
   }
 }

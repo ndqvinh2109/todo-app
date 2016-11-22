@@ -16,15 +16,19 @@
             <div ng-include=" 'templates/block/nav.html' " class="col-sm-3 col-md-2"></div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <div class="jumbotron text-center">
-                    <h1 ng-if="todos.length>0">You have <span class="label label-info">{{todos.length}}</span> things to do</h1>
-                    <h1 ng-if="todos.length==0">No more todos! You're all caught up</h1>
+                    <h1 ng-if="todos.length > 0">You have <span class="label label-info">{{todos.length}}</span> things to do</h1>
+                    <h1 ng-if="todos.length == 0">No more todos! You're all caught up</h1>
                 </div>
                 <div class="row">
-                    <form>
+                    <form name="todoForm" novalidate>
                         <div class="form-group">
-                            <input class="form-control form-control-lg" type="text" placeholder="What do you want to do?" ng-model="formData.text">
+                            <input name="todoText" class="form-control form-control-lg" type="text" placeholder="What do you want to do?" ng-model="formData.text" required maxlength="20">
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="createTodo()">Add</button>
+                        <div ng-messages="todoForm.todoText.$error" role="alert" ng-if="todoForm.todoText.$touched">
+                            <div ng-message="required">Please enter a value for this field.</div>
+                            <div ng-message="maxlength">This field can be at most 15 characters long.</div>
+                        </div>
                     </form>
                 </div>
                 <div class="card list-todo">
@@ -38,6 +42,7 @@
     <script type="text/javascript" src="/bower_components/tether/dist/js/tether.min.js"></script>
     <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-messages/angular-messages.min.js"></script>
     <script type="text/javascript" src="./javascript/services/todo.js"></script>
     <script type="text/javascript" src="./javascript/controllers/main.js"></script>
     <script type="text/javascript" src="./javascript/directives/todo.js"></script>
