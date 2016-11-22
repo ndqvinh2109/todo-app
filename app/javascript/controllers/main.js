@@ -1,5 +1,5 @@
 angular.module('todoController', [])
-    .controller('mainController', ['$scope', 'Todo', function($scope, Todo) {
+    .controller('mainController', ['$scope', 'Todo', '$timeout', function($scope, Todo, $timeout) {
         $scope.formData = {};
 
         Todo.get()

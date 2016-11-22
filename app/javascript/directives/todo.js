@@ -23,3 +23,26 @@ todoDirective.directive('todoList', function() {
         controller: 'mainController'
     };
 });
+
+todoDirective.directive('todoInput', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'templates/pages/todo-input.html',
+		scope: {
+			createTodo: '&'
+		},
+		controller: function($scope) {
+
+	        $scope.reset = function() {
+	            $scope.todoForm.$setPristine();
+	            $scope.todoForm.$setUntouched();
+	        }
+
+	        $scope.watch(function(scope) {
+	        	return scope.todoForm.$submitted;
+	        }, function(newValue, oldValue) {
+	        	console.log(newValue);
+	        });
+		}
+	}
+});
