@@ -20,9 +20,9 @@
                     <h1 ng-if="todos.length == 0">No more todos! You're all caught up</h1>
                 </div>
                 <div class="row">
-                    <todo-input create-todo="createTodo()"></todo-input>
+                    <todo-input create-todo="createTodo"></todo-input>
                 </div>
-                <todo-list todos="todos"></todo-list>
+                <todo-list todos="todos" search-text="searchText"></todo-list>
             </div>
         </div>
     </div>

@@ -18,7 +18,8 @@ todoDirective.directive('todoList', function() {
         templateUrl: 'templates/pages/todo-list.html',
         scope: {
             todos: '=',
-            deleteTodo: '&'
+            deleteTodo: '&',
+            searchText: '='
         },
         controller: 'mainController'
     };
@@ -32,17 +33,17 @@ todoDirective.directive('todoInput', function() {
 			createTodo: '&'
 		},
 		controller: function($scope) {
+            $scope.formData = {};
+            $scope.saveTodo = function() {
+                $scope.createTodo()($scope.formData);
+                $scope.reset();
+            }
 
 	        $scope.reset = function() {
+                $scope.formData = {};
 	            $scope.todoForm.$setPristine();
 	            $scope.todoForm.$setUntouched();
 	        }
-
-	        $scope.watch(function(scope) {
-	        	return scope.todoForm.$submitted;
-	        }, function(newValue, oldValue) {
-	        	console.log(newValue);
-	        });
 		}
 	}
 });

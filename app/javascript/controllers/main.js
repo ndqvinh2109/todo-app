@@ -1,6 +1,5 @@
 angular.module('todoController', [])
-    .controller('mainController', ['$scope', 'Todo', '$timeout', function($scope, Todo, $timeout) {
-        $scope.formData = {};
+    .controller('mainController', ['$scope', 'Todo', function($scope, Todo) {
 
         Todo.get()
             .success(function(data) {
@@ -10,10 +9,9 @@ angular.module('todoController', [])
                 console.log('Error ' + data);
             });
 
-        $scope.createTodo = function() {
-            Todo.create($scope.formData)
+        $scope.createTodo = function(todo) {
+            Todo.create(todo)
                 .success(function(data) {
-                    $scope.formData = {};
                     $scope.todos = data;
                 })
                 .error(function(data) {

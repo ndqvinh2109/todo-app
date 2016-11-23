@@ -5,5 +5,5 @@
     <div ng-messages="todoForm.todoText.$error" role="alert" ng-if="todoForm.todoText.$touched">
         <div ng-messages-include="templates/utils/messages.html"></div>
     </div>
-    <button type="submit" class="btn btn-danger btn-lg btn-block" ng-click="createTodo()" ng-disabled="todoForm.$invalid">Add</button>
+    <button type="submit" class="btn btn-danger btn-lg btn-block" ng-click="saveTodo()" ng-disabled="todoForm.$invalid">Add</button>
 </form>
