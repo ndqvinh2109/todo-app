@@ -13,7 +13,8 @@
     <div ng-include=" 'templates/block/navbar.html' "></div>
     <div class="container-fluid">
         <div class="row">
-            <div ng-include=" 'templates/block/nav.html' " class="col-sm-3 col-md-2"></div>
+        
+            <todo-filter-select class="col-sm-3 col-md-2"></todo-filter-select>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <div class="jumbotron text-center">
                     <h1 ng-if="todos.length > 0">You have <span class="label label-info">{{todos.length}}</span> things to do</h1>
@@ -22,10 +23,11 @@
                 <div class="row">
                     <todo-input create-todo="createTodo"></todo-input>
                 </div>
-                <todo-list todos="todos" search-text="searchText"></todo-list>
+                <todo-list todos="todos" search-text="searchText" active-filter="activeFilter" delete-todo="deleteTodo" update-todo="updateTodo"></todo-list>
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="/bower_components/tether/dist/js/tether.min.js"></script>

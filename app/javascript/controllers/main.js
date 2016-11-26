@@ -1,6 +1,5 @@
 angular.module('todoController', [])
     .controller('mainController', ['$scope', 'Todo', function($scope, Todo) {
-
         Todo.get()
             .success(function(data) {
                 $scope.todos = data;
