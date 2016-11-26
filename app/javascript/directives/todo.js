@@ -21,9 +21,6 @@ todoDirective.directive('todoItem', function() {
     };
 });
 
-todoDirective.filter('computeFilter', function() {
-
-});
 todoDirective.directive('todoList', function() {
     return {
         restrict: 'E',
@@ -45,12 +42,16 @@ todoDirective.directive('todoList', function() {
             };
         },
         link: function(scope, element, attrs) {
-        	console.log(scope.activeFilter);
 
-        	scope.computeFilter = function(todo) {
-        		var ifComplete = scope.activeFilter === 'completed';
-        		return ifComplete === todo.done;
-        	}
+            scope.computeFilter = function(todo) {
+                var ifComplete = scope.activeFilter === 'completed';
+
+                if (scope.activeFilter == 'all') {
+                    return true;
+                }
+
+                return ifComplete === todo.done;
+            }
         }
     };
 });
@@ -82,16 +83,16 @@ todoDirective.directive('todoFilterSelect', function() {
     return {
         restrict: 'E',
         templateUrl: 'templates/pages/todo-filter-select.html',
-        
-        link: function(scope, element, attrs) {
-        	scope.activeFilter = 'completed';
 
-        	scope.setActiveFilter = function(activeFilter) {
-        		scope.activeFilter = activeFilter;
-        	};
+        link: function(scope, element, attrs) {
+            scope.activeFilter = 'all';
+
+            scope.setActiveFilter = function(activeFilter) {
+                scope.activeFilter = activeFilter;
+            };
 
             scope.makeActiveFilter = function(activeFilter) {
-               return activeFilter === scope.activeFilter;              
+                return activeFilter === scope.activeFilter;
             };
 
         }

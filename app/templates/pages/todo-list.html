@@ -1,8 +1,6 @@
-{{activeFilter}}
 <div class="card list-todo" ng-if="todos.length > 0">
     <li class="list-group-item" ng-repeat="todo in todos | filter: {text: searchText} | filter: computeFilter">
         <ul class="list-group list-group-flush">
-            {{computeFilter(todo)}}
             <todo-item todo="todo" delete-todo="delete" update-todo="update"></todo-item>
         </ul>
     </li>
