@@ -14,19 +14,15 @@ module.exports = function(app) {
     app.post('/api/todos', function(req, res) {
         Todo.create({
             text: req.body.text,
-            done: false
+            done: false,
+            date: new Date(),
+            color: req.body.color
         }, function(err, todo) {
             if (err) {
                 res.send(err);
             }
 
-            Todo.find(function(err, todos) {
-                if (err) {
-                    res.send(err);
-                }
-                res.json(todos);
-            });
-
+            res.json(todo);
         });
     });
 
@@ -38,29 +34,18 @@ module.exports = function(app) {
                 res.send(err);
             }
 
-            Todo.find(function(err, todos) {
-                if (err) {
-                    res.send(err);
-                }
-                res.json(todos);
-            });
         });
     });
 
     app.put('/api/todos/', function(req, res) {
-       
+
         Todo.findByIdAndUpdate(req.body._id, { $set: req.body }, function(err, todo) {
-            
+
             if (err) {
                 res.send(err);
             }
 
-            Todo.find(function(err, todos) {
-                if (err) {
-                    res.send(err);
-                }
-                res.json(todos);
-            });
+            res.json(todo);
 
         });
     });

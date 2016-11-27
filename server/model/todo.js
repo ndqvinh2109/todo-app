@@ -1,6 +1,14 @@
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('Todo', {
+var Schema = mongoose.Schema;
+
+var todoSchema = new Schema({
 	text: String,
-	done: Boolean
-});
+	done: Boolean,
+	color: String,
+	date: Date
+})
+
+var Todo = mongoose.model('Todo', todoSchema);
+
+module.exports = Todo;

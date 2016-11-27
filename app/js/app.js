@@ -16,7 +16,11 @@ var app = angular.module('app', [
         'app.filters',
         'app.services',
         'app.directives',
-        'app.controllers'
+        'app.controllers',
+        'todoController', 
+        'todoService', 
+        'todoDirective', 
+        'ngMessages'
     ])
     .run(
         ['$rootScope', '$state', '$stateParams',
