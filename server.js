@@ -8,7 +8,7 @@ var database = require('./server/config/database');
 
 mongoose.connect(database.url);
 
-app.use(express.static(__dirname + '/app/theme/src'));
+app.use(express.static(__dirname + '/app'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
