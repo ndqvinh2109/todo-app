@@ -1,4 +1,4 @@
-var Todo = require('./model/todo');
+var Todo = require('./server/model/todo');
 
 module.exports = function(app) {
 
@@ -66,6 +66,7 @@ module.exports = function(app) {
     });
 
     app.get('*', function(req, res) {
-        res.sendFile(root + '/app/index.html');
+        console.log(__dirname);
+        res.sendFile(__dirname + '/app/index.html');
     });
 };
