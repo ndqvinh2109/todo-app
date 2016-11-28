@@ -19,8 +19,13 @@ angular.module('todoService', [])
         };
     }]).factory('MenuFilter', function MenuFilterFactory() {
         return {
-            get: function() {
-                return 'all';
+            activeMenu: 'all',
+            getActiveMenu: function() {
+                return this.activeMenu;
+            },
+
+            setActiveMenu: function(activeMenu) {
+                this.activeMenu = activeMenu;
             }
         }
     });

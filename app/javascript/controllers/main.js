@@ -3,7 +3,7 @@ angular.module('todoController', [])
         $scope.todo = {};
         $scope.colors = ['primary', 'info', 'success', 'warning', 'danger', 'dark'];
 
-        console.log(MenuFilter.get());
+        console.log(MenuFilter.getActiveMenu());
 
         Todo.get()
             .success(function(data) {
@@ -58,17 +58,13 @@ angular.module('todoController', [])
         };
 
         $scope.computeFilter = function(todo) {
-            var ifComplete = $scope.activeFilter === 'completed';
+            var ifComplete = MenuFilter.getActiveMenu() === 'completed';
 
-            if ($scope.activeFilter == 'all') {
+            if (MenuFilter.getActiveMenu() == 'all') {
                 return true;
             }
 
             return ifComplete === todo.done;
-        }
-        $scope.testValue = "Vinh";
-        $scope.makeTestValue = function(testValue) {
-            $scope.testValue = testValue;
         }
 
     }]);
