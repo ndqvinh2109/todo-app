@@ -17,9 +17,9 @@ var app = angular.module('app', [
         'app.services',
         'app.directives',
         'app.controllers',
-        'todoController', 
-        'todoService', 
-        'todoDirective', 
+        'todoController',
+        'todoService',
+        'todoDirective',
         'ngMessages'
     ])
     .run(
@@ -58,9 +58,7 @@ var app = angular.module('app', [
                         resolve: {
                             deps: ['uiLoad',
                                 function(uiLoad) {
-                                    return uiLoad.load(['js/app/note/note.js',
-                                        'js/libs/moment.min.js'
-                                    ]);
+                                    return uiLoad.load(['js/libs/moment.min.js']);
                                 }
                             ]
                         }
