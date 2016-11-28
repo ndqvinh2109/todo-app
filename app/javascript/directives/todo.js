@@ -98,3 +98,29 @@ todoDirective.directive('todoFilterSelect', function() {
         }
     }
 });
+
+todoDirective.directive('todoFilter', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'tpl/todo-filter.html',
+        scope: {
+            active: '=',
+            makeTestValue: '&'
+        },
+        controller: function($scope) {
+            $scope.active = 'all';
+
+            $scope.setTest = function(testValue) {
+                $scope.makeTestValue()(testValue);
+            };
+            $scope.setActiveFilter = function(activeFilter) {
+                $scope.active = activeFilter;
+            };
+
+            $scope.makeActiveFilter = function(activeFilter) {
+                return activeFilter === $scope.active;
+            };
+        }
+
+    }
+});

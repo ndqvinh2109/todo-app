@@ -17,4 +17,10 @@ angular.module('todoService', [])
                 return $http.put('/api/todos', todoData);
             }
         };
-    }]);
+    }]).factory('MenuFilter', function MenuFilterFactory() {
+        return {
+            get: function() {
+                return 'all';
+            }
+        }
+    });

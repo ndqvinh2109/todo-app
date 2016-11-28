@@ -1,8 +1,9 @@
 angular.module('todoController', [])
-    .controller('mainController', ['$scope', 'Todo', function($scope, Todo) {
+    .controller('mainController', ['$scope', 'Todo', 'MenuFilter', function($scope, Todo, MenuFilter) {
         $scope.todo = {};
         $scope.colors = ['primary', 'info', 'success', 'warning', 'danger', 'dark'];
-        $scope.activeFilter = 'all';
+
+        console.log(MenuFilter.get());
 
         Todo.get()
             .success(function(data) {
@@ -56,20 +57,6 @@ angular.module('todoController', [])
             $scope.todo.selected = true;
         };
 
-
-        $scope.setActiveFilter = function(activeFilter) {
-            $scope.activeFilter = activeFilter;
-            console.log($scope.activeFilter);
-        };
-
-        $scope.getActiveFilter = function(activeFilter) {
-            return $scope.activeFilter;
-        };
-
-        $scope.makeActiveFilter = function(activeFilter) {
-            return activeFilter === $scope.activeFilter;
-        };
-
         $scope.computeFilter = function(todo) {
             var ifComplete = $scope.activeFilter === 'completed';
 
@@ -78,6 +65,10 @@ angular.module('todoController', [])
             }
 
             return ifComplete === todo.done;
+        }
+        $scope.testValue = "Vinh";
+        $scope.makeTestValue = function(testValue) {
+            $scope.testValue = testValue;
         }
 
     }]);
