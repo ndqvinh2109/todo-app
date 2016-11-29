@@ -41,9 +41,13 @@ var app = angular.module('app', [
                 app.value = $provide.value;
 
                 $urlRouterProvider
-                    .otherwise('/apps/note');
+                    .otherwise('/app/page/price');
                 $stateProvider
-
+                    .state('app', {
+                        abstract: true,
+                        url: '/app',
+                        templateUrl: 'tpl/app.html'
+                    })
                     .state('apps', {
                         abstract: true,
                         url: '/apps',
@@ -55,15 +59,24 @@ var app = angular.module('app', [
                         resolve: {
                             deps: ['uiLoad',
                                 function(uiLoad) {
-                                    return uiLoad.load(['js/libs/moment.min.js', 
+                                    return uiLoad.load(['js/libs/moment.min.js',
                                         'js/app/todo/services/todo.js',
-                                         'js/app/todo/directives/todo.js',
+                                        'js/app/todo/directives/todo.js',
                                         'js/app/todo/controllers/main.js'
-                                       
-                                         ]);
+
+                                    ]);
                                 }
                             ]
                         }
+                    })
+                    // pages
+                    .state('app.page', {
+                        url: '/page',
+                        template: '<div ui-view class="fade-in-down"></div>'
+                    })
+                    .state('app.page.price', {
+                        url: '/price',
+                        templateUrl: 'tpl/pages/shop/shop-home.html'
                     })
 
             }

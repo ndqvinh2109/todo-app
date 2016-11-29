@@ -1,4 +1,4 @@
-app.controller('mainController', ['$scope', 'Todo', 'MenuFilter', function($scope, Todo, MenuFilter) {
+app.controller('todoController', ['$scope', 'Todo', 'MenuFilter', function($scope, Todo, MenuFilter) {
     $scope.todo = {};
     $scope.colors = ['primary', 'info', 'success', 'warning', 'danger', 'dark'];
 
