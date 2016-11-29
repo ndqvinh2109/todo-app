@@ -1,7 +1,7 @@
-app.directive('todoFilter', function(MenuFilter) {
+app.directive('navMenu', function(MenuFilter) {
     return {
         restrict: 'E',
-        templateUrl: 'tpl/pages/todo/todo-filter.html',
+        templateUrl: 'tpl/pages/todo/nav-menu.html',
         controller: function($scope) {
 
             $scope.setActiveFilter = function(activeFilter) {

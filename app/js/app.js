@@ -76,7 +76,14 @@ var app = angular.module('app', [
                     })
                     .state('app.page.price', {
                         url: '/price',
-                        templateUrl: 'tpl/pages/shop/shop-home.html'
+                        templateUrl: 'tpl/pages/shop/shop-home.html',
+                        resolve: {
+                            deps: ['uiLoad',
+                                function(uiLoad) {
+                                    return uiLoad.load(['js/app/shop/directives/shop.js']);
+                                }
+                            ]
+                        }
                     })
 
             }
