@@ -1,31 +1,31 @@
-angular.module('todoService', [])
-    .factory('Todo', ['$http', function TodoFactory($http) {
-        return {
-            get: function() {
-                return $http.get('/api/todos');
-            },
+app.factory('Todo', ['$http', function TodoFactory($http) {
+    return {
+        get: function() {
+            return $http.get('/api/todos');
+        },
 
-            create: function(todoData) {
-                return $http.post('/api/todos', todoData);
-            },
+        create: function(todoData) {
+            return $http.post('/api/todos', todoData);
+        },
 
-            delete: function(id) {
-                return $http.delete('/api/todos/' + id);
-            },
+        delete: function(id) {
+            return $http.delete('/api/todos/' + id);
+        },
 
-            update: function(todoData) {
-                return $http.put('/api/todos', todoData);
-            }
-        };
-    }]).factory('MenuFilter', function MenuFilterFactory() {
-        return {
-            activeMenu: 'all',
-            getActiveMenu: function() {
-                return this.activeMenu;
-            },
-
-            setActiveMenu: function(activeMenu) {
-                this.activeMenu = activeMenu;
-            }
+        update: function(todoData) {
+            return $http.put('/api/todos', todoData);
         }
-    });
+    };
+}]);
+app.factory('MenuFilter', function MenuFilterFactory() {
+    return {
+        activeMenu: 'all',
+        getActiveMenu: function() {
+            return this.activeMenu;
+        },
+
+        setActiveMenu: function(activeMenu) {
+            this.activeMenu = activeMenu;
+        }
+    }
+});

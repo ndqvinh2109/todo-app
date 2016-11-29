@@ -1,9 +1,7 @@
-var todoDirective = angular.module('todoDirective', []);
-
-todoDirective.directive('todoFilter', function(MenuFilter) {
+app.directive('todoFilter', function(MenuFilter) {
     return {
         restrict: 'E',
-        templateUrl: 'tpl/todo-filter.html',
+        templateUrl: 'tpl/pages/todo/todo-filter.html',
         controller: function($scope) {
 
             $scope.setActiveFilter = function(activeFilter) {

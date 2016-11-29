@@ -17,9 +17,6 @@ var app = angular.module('app', [
         'app.services',
         'app.directives',
         'app.controllers',
-        'todoController',
-        'todoService',
-        'todoDirective',
         'ngMessages'
     ])
     .run(
@@ -54,11 +51,16 @@ var app = angular.module('app', [
                     })
                     .state('apps.note', {
                         url: '/note',
-                        templateUrl: 'tpl/apps_note.html',
+                        templateUrl: 'tpl/pages/todo/apps_todo.html',
                         resolve: {
                             deps: ['uiLoad',
                                 function(uiLoad) {
-                                    return uiLoad.load(['js/libs/moment.min.js']);
+                                    return uiLoad.load(['js/libs/moment.min.js', 
+                                        'js/app/todo/services/todo.js',
+                                         'js/app/todo/directives/todo.js',
+                                        'js/app/todo/controllers/main.js'
+                                       
+                                         ]);
                                 }
                             ]
                         }
