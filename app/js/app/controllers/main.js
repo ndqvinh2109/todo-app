@@ -3,8 +3,6 @@ angular.module('todoController', [])
         $scope.todo = {};
         $scope.colors = ['primary', 'info', 'success', 'warning', 'danger', 'dark'];
 
-        console.log(MenuFilter.getActiveMenu());
-
         Todo.get()
             .success(function(data) {
                 $scope.todos = data;
@@ -41,7 +39,12 @@ angular.module('todoController', [])
         $scope.deleteTodo = function(id) {
             Todo.delete(id)
                 .success(function(data) {
+                    var ids = $scope.todos.map(function(todo) {
+                        return todo._id;
+                    });
 
+                    var index = ids.indexOf(id);
+                    $scope.todos.splice(index, 1);
                 })
                 .error(function(data) {
                     console.log('Error ' + data);

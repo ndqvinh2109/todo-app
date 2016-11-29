@@ -29,10 +29,12 @@ module.exports = function(app) {
     app.delete('/api/todos/:todoId', function(req, res) {
         Todo.remove({
             _id: req.params.todoId
-        }, function(err, todo) {
+        }, function(err, data) {
             if (err) {
                 res.send(err);
             }
+
+            res.json(data);
 
         });
     });
