@@ -43,7 +43,6 @@ var app = angular.module('app', [
                 $urlRouterProvider
                     .otherwise('/app/page/price');
                 $stateProvider
-
                     .state('app', {
                         abstract: true,
                         url: '/app',
@@ -71,16 +70,21 @@ var app = angular.module('app', [
                         }
                     })
                     // pages
-
                     .state('app.page', {
                         url: '/page',
                         template: '<div ui-view class="fade-in-down"></div>'
                     })
                     .state('app.page.price', {
                         url: '/price',
-                        templateUrl: 'tpl/pages/shop/shop-home.html'
+                        templateUrl: 'tpl/pages/shop/shop-home.html',
+                        resolve: {
+                            deps: ['uiLoad',
+                                function(uiLoad) {
+                                    return uiLoad.load(['js/app/shop/directives/shop.js']);
+                                }
+                            ]
+                        }
                     })
-
             }
         ]
     )
