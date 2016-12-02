@@ -15,4 +15,5 @@ app.controller('productController', ['$scope', '$http', function($scope, $http) 
     $http.get('js/app/shop/data/ladies_outerwear.json').then(function(res) {
         $scope.products.push.apply($scope.products, res.data);
     })
+
 }])
