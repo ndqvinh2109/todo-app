@@ -1,27 +1,12 @@
-<div class="bg-light lter b-b wrapper-md hidden-print">
-    <h1 class="m-n font-thin h3">Price</h1>
-</div>
-<div class="wrapper-md">
-    <div class="row row-sm">
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="panel b-a">
-                <image src="js/app/shop/images/10-11017A.jpg" class="img-full"></image>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="panel b-a">
-                <image src="js/app/shop/images/10-11017A.jpg" class="img-full"></image>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="panel b-a">
-                <image src="js/app/shop/images/10-11017A.jpg" class="img-full"></image>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 hidden-md">
-            <div class="panel b-a">
-              <image src="js/app/shop/images/10-11017A.jpg" class="img-full"></image>
-            </div>    
-        </div>
-    </div>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false; 
+    app.settings.asideDock = true;
+    app.settings.fixedHeader = false;
+    app.settings.fixedAside = false;
+    app.settings.navbarHeaderColor = 'bg-info';
+    app.settings.navbarCollapseColor = 'bg-info';
+    app.settings.asideColor = 'bg-white';
+  " ng-controller="productController">
+    
+    <shop-list products="products"></shop-list>
 </div>

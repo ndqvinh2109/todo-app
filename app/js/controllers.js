@@ -12,7 +12,7 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
 
             // config
             $scope.app = {
-                name: 'Todo',
+                name: 'Shop',
                 version: '1.3.0',
                 // for chart colors
                 color: {

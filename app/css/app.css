@@ -1336,24 +1336,24 @@ body {
   .app-aside-dock .app-aside .navi-wrap > div {
     display: none !important;
   }
-  .app-aside-dock .app-aside .navi > ul > li {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li {
     position: relative;
     display: inline-block;
     float: left;
   }
-  .app-aside-dock .app-aside .navi > ul > li > a {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li > a {
     height: auto;
     padding: 10px 15px 12px 15px;
     text-align: center;
   }
-  .app-aside-dock .app-aside .navi > ul > li > a > .badge,
-  .app-aside-dock .app-aside .navi > ul > li > a > .label {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li > a > .badge,
+  .app-aside-dock .app-aside .navi nav-menu > ul > li > a > .label {
     position: absolute;
     top: 5px;
     right: 8px;
     padding: 1px 4px;
   }
-  .app-aside-dock .app-aside .navi > ul > li > a > i {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li > a > i {
     display: block;
     float: none;
     width: 40px;
@@ -1364,7 +1364,7 @@ body {
     font-size: 14px;
     line-height: 40px;
   }
-  .app-aside-dock .app-aside .navi > ul > li > a > span.pull-right {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li > a > span.pull-right {
     position: absolute;
     bottom: 2px;
     left: 50%;
@@ -1372,22 +1372,22 @@ body {
     margin-left: -6px;
     line-height: 1;
   }
-  .app-aside-dock .app-aside .navi > ul > li > a > span.pull-right i {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li > a > span.pull-right i {
     width: 12px;
     font-size: 12px;
     line-height: 12px;
   }
-  .app-aside-dock .app-aside .navi > ul > li > a > span.pull-right i.text {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li > a > span.pull-right i.text {
     line-height: 14px;
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
             transform: rotate(90deg);
   }
-  .app-aside-dock .app-aside .navi > ul > li > a > span {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li > a > span {
     display: block;
     font-weight: normal;
   }
-  .app-aside-dock .app-aside .navi > ul > li .nav-sub {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li .nav-sub {
     position: absolute;
     top: auto !important;
     left: 0;
@@ -1398,7 +1398,7 @@ body {
     -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
-  .app-aside-dock .app-aside .navi > ul > li .nav-sub-header {
+  .app-aside-dock .app-aside .navi nav-menu > ul > li .nav-sub-header {
     display: none !important;
   }
   .app-aside-dock .app-aside .navi li li a {

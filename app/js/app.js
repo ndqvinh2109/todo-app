@@ -41,7 +41,7 @@ var app = angular.module('app', [
                 app.value = $provide.value;
 
                 $urlRouterProvider
-                    .otherwise('/app/page/price');
+                    .otherwise('/app/page/shop');
                 $stateProvider
                     .state('app', {
                         abstract: true,
@@ -74,13 +74,15 @@ var app = angular.module('app', [
                         url: '/page',
                         template: '<div ui-view class="fade-in-down"></div>'
                     })
-                    .state('app.page.price', {
-                        url: '/price',
+                    .state('app.page.shop', {
+                        url: '/shop',
                         templateUrl: 'tpl/pages/shop/shop-home.html',
                         resolve: {
                             deps: ['uiLoad',
                                 function(uiLoad) {
-                                    return uiLoad.load(['js/app/shop/directives/shop.js']);
+                                    return uiLoad.load(['js/app/shop/directives/shop.js',
+                                        'js/app/shop/controllers/product.js'
+                                    ]);
                                 }
                             ]
                         }
